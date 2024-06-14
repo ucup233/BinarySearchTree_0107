@@ -48,13 +48,26 @@ public:
 		currentNode = ROOT;
 		parent = NULL;
 
-		while ((currentNode != NULL) && (currentNode->info != element)) {  
-			parent = currentNode;  
+		while ((currentNode != NULL) && (currentNode->info != element)) {
+			parent = currentNode;
 			if (element < currentNode->info) {
 				currentNode = currentNode->leftchild;
 			}
-			else {  // If the value in the data field of the new node is greater than the value in the data field of the currentNode
-				currentNode = currentNode->rightchild;  // Make the currentNode point to the right child of the currentNode
+			else {
+				currentNode = currentNode->rightchild;
 			}
+		}
+	}
+	void inorder(Node* ptr) 
+	{
+		if (ROOT == NULL) {
+			cout << "Tree is empty" << endl;
+			return;
+		}
+		if (ptr != NULL) {
+			inorder(ptr->leftchild); 
+			cout << ptr->info << " "; 
+			inorder(ptr->rightchild); 
+		}
 	}
 };

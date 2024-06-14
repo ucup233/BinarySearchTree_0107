@@ -50,7 +50,11 @@ public:
 
 		while ((currentNode != NULL) && (currentNode->info != element)) {  
 			parent = currentNode;  
-			if (element < currentNode->info) {   
-				currentNode = currentNode->leftchild;  
+			if (element < currentNode->info) {
+				currentNode = currentNode->leftchild;
+			}
+			else {  // If the value in the data field of the new node is greater than the value in the data field of the currentNode
+				currentNode = currentNode->rightchild;  // Make the currentNode point to the right child of the currentNode
+			}
 	}
 };

@@ -32,5 +32,10 @@ public:
 
 		Node* parent = nullptr;
 		Node* currentNode = nullptr;
+
+		if (parent == nullptr) {  
+			ROOT = newNode;  
+			return;  
+		}
 	}
 };
